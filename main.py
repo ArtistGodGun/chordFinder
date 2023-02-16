@@ -34,14 +34,10 @@ try:
 except:
     pass
 audio_list = os.listdir('music')
-error_list = []
-sheet_list = []
 song_chord = []
 for music in audio_list[0:]:
     print('start!!')
     df = pd.DataFrame()
-    # music = music + '.mp3'
-    # audio_file = os.path.join('music_data', music)
     audio_path = os.path.join('music', music)
     audio_name, audio_ext = os.path.splitext(music)
 
@@ -68,12 +64,10 @@ for music in audio_list[0:]:
     vocals, drums는 지우고 bass, other를 FFMPEG으로 합칩니다.
     RETURN : accom.wav
     '''
-    # print('get Beat Time : ', time.time() - run_time)
     accom_start = time.time()
     if re == 0:
         print('spleeter Start')
         accom_path = module.getAccomFile(audio_path, dir, audio_name)
-    # print('get Accom File : ', time.time() - accom_start)
 
     print('spleeterEnd')
     '''
@@ -98,23 +92,9 @@ for music in audio_list[0:]:
         module.exportMIDI(split_audio_path, split_midi_path)
     print('basic-pitch End!')
 
-    # print('get Midi File : ', time.time() - midi_start)
-
     '''
     자른 CSV파일의 정보를 기반으로 코드 네임을 뽑아냅니다.
     '''
     chord_list = mn.midiToNote(split_midi_path)
-    # chord_list = module.getChordName(split_midi_path)
     print(chord_list)
     break
-    # print('process end : ', time.time() - run_time)
-
-
-# audio_list = os.listdir('chord_data')
-# for i in audio_list[11:]:
-#     split_midi_path = os.path.join('chord_data',i)
-
-#     chord_list = mn.midiToNote(split_midi_path)
-#     # chord_list = module.getChordName(split_midi_path)
-#     print(chord_list)
-#     break

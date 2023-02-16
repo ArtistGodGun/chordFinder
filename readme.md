@@ -14,6 +14,15 @@ cd ..
 pip install tensorflow-macos tensorflow-metal poetry
 git clone https://github.com/Deezer/spleeter && cd spleeter
 ~~~
+* spleeter/pyproject.toml -> delete this package
+~~~
+librosa
+tensorflow
+pandas
+numpy
+llvmlite
+protobuf
+~~~
 ~~~
 poetry update # warning이 뜰수도 있으나 무시해도 됨
 ~~~
@@ -30,9 +39,14 @@ pip install numpy==1.23.5 scipy==1.6.0 numba
 cd ..
 ~~~
 
-### basic-pitch
+### basic-pitch install
 ~~~
 git clone https://github.com/spotify/basic-pitch && cd basic-pitch
+~~~
+* basic-pitch/setup.cfg -> delete this package
+~~~
+tensorflow
+tensorflow-macos
 ~~~
 ~~~
 pip install pretty_midi mir_eval
