@@ -1,12 +1,13 @@
 ### madmom install
-* pip install madmom
-* export PATH='path/to/scripts':$PATH
-* git clone --recursive https://github.com/CPJKU/madmom.git
-* cd madmom
-* git submodule update --init --remote
-* python setup.py develop --user
-* cd ..
-
+'''
+pip install madmom
+export PATH='path/to/scripts':$PATH
+git clone --recursive https://github.com/CPJKU/madmom.git
+cd madmom
+git submodule update --init --remote
+python setup.py develop --user
+cd ..
+'''
 ### spleeter install
 pip install tensorflow-macos tensorflow-metal poetry
 git clone https://github.com/Deezer/spleeter && cd spleeter
